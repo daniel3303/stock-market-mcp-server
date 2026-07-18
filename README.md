@@ -1,6 +1,6 @@
 # Equibles — Stock Market & Financial Data MCP Server
 
-Free hosted MCP server + open-source self-host option, 90+ tools for AI agents (Claude, ChatGPT, Cursor, VS Code…): SEC filings, fundamentals, 13F institutional holdings, insider trades, congressional trading, earnings call transcripts, short interest, macro data.
+90+ MCP tools for AI agents like Claude, ChatGPT and Cursor: SEC filings, fundamentals, 13F institutional holdings, insider and congressional trades, earnings call transcripts, short interest and macro data. Free hosted tier, or self-host the open-source stack.
 
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Tools](https://img.shields.io/badge/tools-90%2B-brightgreen.svg)](#available-tools-90)
@@ -9,7 +9,7 @@ Free hosted MCP server + open-source self-host option, 90+ tools for AI agents (
 
 ## What is this?
 
-The Model Context Protocol (MCP) lets AI assistants call external data tools instead of guessing from training data. Equibles exposes US stock market and financial data as an MCP server: use it hosted at `https://mcp.equibles.com/mcp` (free API key, or OAuth with no key at all), or run it yourself from the open-source stack. Every dataset is parsed from primary and regulator sources — SEC EDGAR, FINRA, FRED, CFTC, CBOE, USAspending, and company IR sites — with no third-party estimates in the loop.
+The Model Context Protocol (MCP) lets AI assistants call external data tools instead of guessing from training data. Equibles exposes US stock market and financial data as an MCP server: use it hosted at `https://mcp.equibles.com/mcp` (free API key, or OAuth with no key at all), or run it yourself from the open-source stack. Everything is parsed from the primary sources (SEC EDGAR, FINRA, FRED, CFTC, CBOE, USAspending, company IR sites), not from third-party estimates.
 
 ## Quickstart (hosted, 30 seconds)
 
@@ -83,8 +83,6 @@ After connecting, see the full per-client guides at [https://equibles.com/docs/m
 
 ## Available tools (90+)
 
-Legend: tools are available on the hosted server. Groups marked **[Hosted only]** are the commercial analysis layers; every other group is also part of the open-source self-host build (see [Self-host](#self-host-with-docker-open-source)).
-
 ### SEC filings search & full-text RAG
 
 | Tool | Description |
@@ -131,7 +129,7 @@ Legend: tools are available on the hosted server. Groups marked **[Hosted only]*
 | GetInsiderOwnership | Insider ownership summary, ranked by shares held. |
 | GetProposedSales | Proposed insider sales from SEC Form 144. |
 | SearchInsiders | Search corporate insiders by name. |
-| GetInsiderSentimentScores **[Hosted only]** | Stocks with the highest composite 0–100 insider-sentiment score. |
+| GetInsiderSentimentScores | Stocks with the highest composite 0–100 insider-sentiment score. |
 
 ### Congressional stock trading
 
@@ -141,9 +139,9 @@ Legend: tools are available on the hosted server. Groups marked **[Hosted only]*
 | GetMemberTrades | A member's disclosed trades. |
 | GetMemberNetWorth | A member's net worth history from disclosures. |
 | SearchCongressMembers | Search members by name. |
-| GetMarketWideCongressionalActivity **[Hosted only]** | Stocks Congress traded most over a trailing window. |
+| GetMarketWideCongressionalActivity | Stocks Congress traded most over a trailing window. |
 
-### Earnings calls: transcripts, briefs & AI insights **[Hosted only]**
+### Earnings calls: transcripts, briefs & AI insights
 
 | Tool | Description |
 |---|---|
@@ -154,7 +152,7 @@ Legend: tools are available on the hosted server. Groups marked **[Hosted only]*
 | GetEarningsBrief | AI earnings brief (TL;DR, bull/bear, pull-quotes). |
 | GetCallInsights | AI-scored insights (tone, hedging, themes). |
 
-### Earnings guidance, KPIs & non-GAAP bridges **[Hosted only]**
+### Earnings guidance, KPIs & non-GAAP bridges
 
 | Tool | Description |
 |---|---|
@@ -188,10 +186,10 @@ Legend: tools are available on the hosted server. Groups marked **[Hosted only]*
 
 | Tool | Description |
 |---|---|
-| GetValuationMultiples **[Hosted only]** | EV/Revenue, EV/EBIT, P/E with industry quartiles. |
-| GetValuationMultiplesHistory **[Hosted only]** | The same valuation multiples over time. |
-| ScreenStocks **[Hosted only]** | Screen the stock universe with range filters across datasets. |
-| GetCorrelatedStocks **[Hosted only]** | Most and least correlated stocks by daily returns. |
+| GetValuationMultiples | EV/Revenue, EV/EBIT, P/E with industry quartiles. |
+| GetValuationMultiplesHistory | The same valuation multiples over time. |
+| ScreenStocks | Screen the stock universe with range filters across datasets. |
+| GetCorrelatedStocks | Most and least correlated stocks by daily returns. |
 
 ### Economic data (FRED) & macro calendar
 
@@ -235,20 +233,20 @@ Legend: tools are available on the hosted server. Groups marked **[Hosted only]*
 
 | Tool | Description |
 |---|---|
-| GetExecutiveChanges **[Hosted only]** | Executive/director changes from 8-K Item 5.02. |
-| GetExecutiveCompensation **[Hosted only]** | Compensation from DEF 14A. |
-| GetBuybackPrograms **[Hosted only]** | Share-repurchase programs and history. |
-| GetAtmPrograms **[Hosted only]** | At-the-market equity offering programs. |
-| GetGoingConcernStatus **[Hosted only]** | Going-concern doubt status from the latest filing. |
-| GetCustomerConcentration **[Hosted only]** | Customer-concentration risk disclosures. |
-| GetInvestorRelationsNews **[Hosted only]** | Recent IR press releases. |
-| GetInvestorRelationsEvents **[Hosted only]** | Upcoming IR events / webcasts. |
-| GetSuperInvestors **[Hosted only]** | Curated superinvestor directory with 13F CIKs. |
-| GetGovernmentContracts **[Hosted only]** | Federal contract awards (USAspending.gov) won by a company. |
-| GetTopGovernmentContractors **[Hosted only]** | Companies ranked by federal contract dollars. |
+| GetExecutiveChanges | Executive/director changes from 8-K Item 5.02. |
+| GetExecutiveCompensation | Compensation from DEF 14A. |
+| GetBuybackPrograms | Share-repurchase programs and history. |
+| GetAtmPrograms | At-the-market equity offering programs. |
+| GetGoingConcernStatus | Going-concern doubt status from the latest filing. |
+| GetCustomerConcentration | Customer-concentration risk disclosures. |
+| GetInvestorRelationsNews | Recent IR press releases. |
+| GetInvestorRelationsEvents | Upcoming IR events / webcasts. |
+| GetSuperInvestors | Curated superinvestor directory with 13F CIKs. |
+| GetGovernmentContracts | Federal contract awards (USAspending.gov) won by a company. |
+| GetTopGovernmentContractors | Companies ranked by federal contract dollars. |
 | GetFdaCatalysts | Scheduled FDA advisory-committee meetings. |
-| GetMarketStatus **[Hosted only]** | US market session status. |
-| GetMarketCalendar **[Hosted only]** | Market holidays and half days. |
+| GetMarketStatus | US market session status. |
+| GetMarketCalendar | Market holidays and half days. |
 
 ## Pricing & rate limits
 
@@ -275,7 +273,7 @@ docker compose up
 
 The MCP server comes up at `http://localhost:8081/mcp`. No API key is required by default; set the `MCP_API_KEY` environment variable to require an `Authorization: Bearer <key>` header. When self-hosting, the Bearer header is the only auth method (no query parameter, no OAuth).
 
-The self-hosted server exposes the 62-tool open-source subset: 13F holdings, insider trading, SEC filings and fundamentals, funds/ETFs/advisers, FRED, CFTC, CBOE, congressional trades, short data, stock prices, and the FDA calendar. The hosted server adds the commercial analysis layers on top (earnings calls, guidance, KPIs, screener, valuation multiples, and more — the groups marked **[Hosted only]** above).
+The self-hosted server exposes the 62-tool open-source subset: 13F holdings, insider trading, SEC filings and fundamentals, funds/ETFs/advisers, FRED, CFTC, CBOE, congressional trades, short data, stock prices, and the FDA calendar. The hosted server adds the commercial layers on top: earnings calls, guidance, KPIs, the screener, valuation multiples, buybacks, executive data, and a few more.
 
 Note: the self-hosted stack runs its own scrapers against the primary sources, so the databases start empty and fill up over time after you start it.
 
