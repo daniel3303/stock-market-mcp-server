@@ -3,7 +3,7 @@
 90+ MCP tools for AI agents like Claude, ChatGPT and Cursor: SEC filings, fundamentals, 13F institutional holdings, insider and congressional trades, earnings call transcripts, short interest and macro data. Free hosted tier, or self-host the open-source stack.
 
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![Tools](https://img.shields.io/badge/tools-90%2B-brightgreen.svg)](#available-tools-90)
+[![Tools](https://img.shields.io/badge/tools-90%2B-brightgreen.svg)](#tools)
 [![Free tier](https://img.shields.io/badge/free%20tier-100%20req%2Fday-orange.svg)](#pricing--rate-limits)
 [![equibles.com](https://img.shields.io/badge/equibles.com-visit-6366f1.svg)](https://equibles.com)
 
@@ -81,7 +81,9 @@ After connecting, see the full per-client guides at [https://equibles.com/docs/m
 - "Screen for profitable software stocks under a 20 P/E."
 - "What's the latest CPI and unemployment rate?"
 
-## Available tools (90+)
+## Tools
+
+90+ tools, grouped by dataset.
 
 ### SEC filings search & full-text RAG
 
