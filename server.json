@@ -1,0 +1,33 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.daniel3303/equibles",
+  "description": "US stock-market & financial data: SEC filings, fundamentals, holdings, insider trades, calls, FRED.",
+  "version": "1.0.0",
+  "repository": {
+    "url": "https://github.com/daniel3303/stock-market-mcp-server",
+    "source": "github",
+    "id": "R_kgDOTcniEA"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://mcp.equibles.com/mcp",
+      "headers": [
+        {
+          "name": "Authorization",
+          "description": "Optional Bearer API key (eq_...) for higher rate limits; the free tier works without one.",
+          "isRequired": false,
+          "isSecret": true,
+          "value": "Bearer {api_key}",
+          "variables": {
+            "api_key": {
+              "description": "Your Equibles API key (get one at https://equibles.com).",
+              "isSecret": true,
+              "isRequired": false
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
