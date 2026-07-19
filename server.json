@@ -15,13 +15,13 @@
       "headers": [
         {
           "name": "Authorization",
-          "description": "Optional Bearer API key (eq_...) for higher rate limits; the free tier works without one.",
+          "description": "Bearer API key (eq_...). Required unless your client signs in over OAuth — tool calls without either are rejected. Free tier: 100 requests/day.",
           "isRequired": false,
           "isSecret": true,
           "value": "Bearer {api_key}",
           "variables": {
             "api_key": {
-              "description": "Your Equibles API key (get one at https://equibles.com).",
+              "description": "Your Equibles API key, from https://equibles.com/dashboard/apikeys (free account, no credit card). Leave blank only if your client supports OAuth sign-in.",
               "isSecret": true,
               "isRequired": false
             }
