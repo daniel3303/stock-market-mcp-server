@@ -1,5 +1,7 @@
 # Equibles — Stock Market & Financial Data MCP Server
 
+[![MCP Queen operational grade](https://mcpqueen.com/badge/io.github.daniel3303/equibles.svg)](https://mcpqueen.com/s/io.github.daniel3303/equibles)
+
 90+ MCP tools for AI agents like Claude, ChatGPT and Cursor: SEC filings, fundamentals, 13F institutional holdings, insider and congressional trades, earnings call transcripts, short interest and macro data. Free hosted tier, or self-host the open-source stack.
 
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
