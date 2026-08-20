@@ -1,9 +1,9 @@
 # Equibles — Stock Market & Financial Data MCP Server
 
-108 MCP tools for AI agents like Claude, ChatGPT and Cursor: SEC filings, fundamentals, 13F institutional holdings, insider and congressional trades, earnings call transcripts, options chains, live quotes, IPO filings, short interest, macro data, and your own portfolio. Free hosted tier, or self-host the open-source stack.
+111 MCP tools for AI agents like Claude, ChatGPT and Cursor: SEC filings, fundamentals, 13F institutional holdings, insider and congressional trades, earnings call transcripts, options chains, live quotes, IPO filings, short interest, macro data, and your own portfolio. Free hosted tier, or self-host the open-source stack.
 
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![Tools](https://img.shields.io/badge/tools-108-brightgreen.svg)](#tools)
+[![Tools](https://img.shields.io/badge/tools-111-brightgreen.svg)](#tools)
 [![Free tier](https://img.shields.io/badge/free%20tier-100%20req%2Fday-orange.svg)](#pricing--rate-limits)
 [![equibles.com](https://img.shields.io/badge/equibles.com-visit-6366f1.svg)](https://equibles.com)
 
@@ -83,7 +83,7 @@ After connecting, see the full per-client guides at [https://equibles.com/docs/m
 
 ## Tools
 
-108 tools, grouped by dataset.
+111 tools, grouped by dataset.
 
 ### SEC filings search & full-text RAG
 
@@ -247,6 +247,14 @@ After connecting, see the full per-client guides at [https://equibles.com/docs/m
 | GetFailsToDeliver | FTD data from the SEC's twice-monthly files. |
 | SearchFunds | Search registered funds/ETFs. |
 | GetFundProfile | Fund profile and largest holdings from NPORT-P. |
+
+### Index composition & forecasts
+
+| Tool | Description |
+|---|---|
+| GetIndexComposition | Current constituent list for an index, heaviest first, with each company's weight. |
+| GetIndexChanges | Companies that have joined or left an index, newest first, with the dates each change is bounded by. |
+| GetIndexForecast | Applies an index's published entry rules to every company we track, rule by rule. |
 
 ### Corporate events & governance
 
