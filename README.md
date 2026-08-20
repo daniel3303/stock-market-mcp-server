@@ -1,9 +1,9 @@
 # Equibles — Stock Market & Financial Data MCP Server
 
-90+ MCP tools for AI agents like Claude, ChatGPT and Cursor: SEC filings, fundamentals, 13F institutional holdings, insider and congressional trades, earnings call transcripts, short interest and macro data. Free hosted tier, or self-host the open-source stack.
+108 MCP tools for AI agents like Claude, ChatGPT and Cursor: SEC filings, fundamentals, 13F institutional holdings, insider and congressional trades, earnings call transcripts, options chains, live quotes, IPO filings, short interest, macro data, and your own portfolio. Free hosted tier, or self-host the open-source stack.
 
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![Tools](https://img.shields.io/badge/tools-90%2B-brightgreen.svg)](#tools)
+[![Tools](https://img.shields.io/badge/tools-108-brightgreen.svg)](#tools)
 [![Free tier](https://img.shields.io/badge/free%20tier-100%20req%2Fday-orange.svg)](#pricing--rate-limits)
 [![equibles.com](https://img.shields.io/badge/equibles.com-visit-6366f1.svg)](https://equibles.com)
 
@@ -83,7 +83,7 @@ After connecting, see the full per-client guides at [https://equibles.com/docs/m
 
 ## Tools
 
-90+ tools, grouped by dataset.
+108 tools, grouped by dataset.
 
 ### SEC filings search & full-text RAG
 
@@ -153,6 +153,7 @@ After connecting, see the full per-client guides at [https://equibles.com/docs/m
 | GetEarningsCallSpeakers | Speaker-labelled earnings-call transcript by fiscal quarter. |
 | GetEarningsBrief | AI earnings brief (TL;DR, bull/bear, pull-quotes). |
 | GetCallInsights | AI-scored insights (tone, hedging, themes). |
+| GetInvestorEventSlides | Captured investor-event slide deck: title, source, page count, and links to the PDF or slide images. |
 
 ### Earnings guidance, KPIs & non-GAAP bridges
 
@@ -183,6 +184,22 @@ After connecting, see the full per-client guides at [https://equibles.com/docs/m
 | GetLargestShortVolume | Largest daily short volume. |
 | GetShortSqueezeScores | Highest composite 0–100 short-squeeze scores. |
 | GetOffExchangeVolume | Weekly dark-pool / OTC volume (FINRA ATS). |
+
+### Live quotes & options chains
+
+| Tool | Description |
+|---|---|
+| GetLiveQuote | Latest intraday price for one or more US listings. |
+| GetOptionExpirations | Available option expiration dates for a stock, with the contract count at each. |
+| GetOptionChain | Calls and puts for one expiration: strike, bid/ask, volume, open interest, IV, and greeks. |
+| GetOptionContract | Full snapshot for one option contract by its OCC symbol. |
+
+### IPO pipeline (S-1 / F-1)
+
+| Tool | Description |
+|---|---|
+| GetIpoFeed | The US S-1/F-1 registration pipeline, newest filing activity first. |
+| GetIpoDetails | One registration in full: status, offer terms, underwriters, risk factors, and pre-IPO financials. |
 
 ### Valuation multiples & stock screener
 
@@ -250,6 +267,29 @@ After connecting, see the full per-client guides at [https://equibles.com/docs/m
 | GetMarketStatus | US market session status. |
 | GetMarketCalendar | Market holidays and half days. |
 
+### Your own portfolio (the only tools that write)
+
+Scoped to the account behind the API key. The caller's own holdings, never anyone else's.
+
+| Tool | Description |
+|---|---|
+| GetMyPortfolio | The user's saved holdings, priced, with cost basis and realized/unrealized profit. |
+| CreateMyPortfolio | Create a new, empty portfolio. |
+| DeleteMyPortfolio | Permanently delete a portfolio and every lot in it. |
+| AddPortfolioLot | Record one purchase or sale as a lot, for a stock or an option contract. |
+| UpdatePortfolioLot | Correct a lot's quantity, price, trade date, or note. |
+| ClosePortfolioLot | Record a sale, cover, or expiry of all or part of a lot, keeping its realized profit. |
+| RemovePortfolioLot | Permanently delete a lot entered by mistake. |
+| WatchInstrument | Put a stock or option contract on a watchlist, with no position recorded. |
+| UnwatchInstrument | Remove a stock or option contract from a watchlist. |
+
+### Agent feedback
+
+| Tool | Description |
+|---|---|
+| ReportProblem | Report wrong, missing, or broken data straight from the tool call. |
+| SuggestToolImprovement | Suggest a change to a tool's behaviour, arguments, or output. |
+
 ## Pricing & rate limits
 
 | Plan | Daily requests | Price | Card required |
@@ -275,7 +315,7 @@ docker compose up
 
 The MCP server comes up at `http://localhost:8081/mcp`. No API key is required by default; set the `MCP_API_KEY` environment variable to require an `Authorization: Bearer <key>` header. When self-hosting, the Bearer header is the only auth method (no query parameter, no OAuth).
 
-The self-hosted server exposes the 62-tool open-source subset: 13F holdings, insider trading, SEC filings and fundamentals, funds/ETFs/advisers, FRED, CFTC, CBOE, congressional trades, short data, stock prices, and the FDA calendar. The hosted server adds the commercial layers on top: earnings calls, guidance, KPIs, the screener, valuation multiples, buybacks, executive data, and a few more.
+The self-hosted server exposes the 64-tool open-source subset: 13F holdings, insider trading, SEC filings and fundamentals, funds/ETFs/advisers, FRED, CFTC, CBOE, congressional trades, short data, stock prices, government contracts, and the FDA calendar. The hosted server adds 44 more on top: earnings calls, guidance, KPIs, the screener, valuation multiples, buybacks, executive data, live quotes, options chains, IPO filings, and your own portfolio.
 
 Note: the self-hosted stack runs its own scrapers against the primary sources, so the databases start empty and fill up over time after you start it.
 
