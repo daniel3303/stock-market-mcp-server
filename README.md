@@ -2,7 +2,7 @@
 
 111 MCP tools for AI agents like Claude, ChatGPT and Cursor: SEC filings, fundamentals, 13F institutional holdings, insider and congressional trades, earnings call transcripts, options chains, live quotes, IPO filings, short interest, macro data, and your own portfolio. Free hosted tier, or self-host the open-source stack.
 
-[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![Discovery repo: MIT](https://img.shields.io/badge/discovery%20repo-MIT-blue.svg)](LICENSE)
 [![Tools](https://img.shields.io/badge/tools-111-brightgreen.svg)](#tools)
 [![Free tier](https://img.shields.io/badge/free%20tier-100%20req%2Fday-orange.svg)](#pricing--rate-limits)
 [![equibles.com](https://img.shields.io/badge/equibles.com-visit-6366f1.svg)](https://equibles.com)
@@ -10,6 +10,10 @@
 ## What is this?
 
 The Model Context Protocol (MCP) lets AI assistants call external data tools instead of guessing from training data. Equibles exposes US stock market and financial data as an MCP server: use it hosted at `https://mcp.equibles.com/mcp` (free API key, or OAuth with no key at all), or run it yourself from the open-source stack. Everything is parsed from the primary sources (SEC EDGAR, FINRA, FRED, CFTC, CBOE, USAspending, company IR sites), not from third-party estimates.
+
+## Licenses
+
+This discovery repository's documentation and metadata use the [MIT license](LICENSE). The self-hosted server implementation is in [daniel3303/Equibles](https://github.com/daniel3303/Equibles) under [AGPL-3.0](https://github.com/daniel3303/Equibles/blob/main/LICENSE). The hosted service is governed by the [Equibles Terms of Service](https://equibles.com/legal/terms).
 
 ## Quickstart (hosted, 30 seconds)
 
@@ -303,7 +307,8 @@ Scoped to the account behind the API key. The caller's own holdings, never anyon
 | Plan | Daily requests | Price | Card required |
 |---|---|---|---|
 | Free | 100 requests/day | $0 | No |
-| Pro | 10,000 requests/day | See [pricing](https://equibles.com/pricing) | Yes |
+| Plus | 10,000 requests/day | See [pricing](https://equibles.com/pricing) | Yes |
+| Pro | 100,000 requests/day | See [pricing](https://equibles.com/pricing) | Yes |
 
 - One shared daily counter across both the MCP server and the REST API; it resets at 00:00 UTC.
 - Rate-limit headers are exposed on responses: `X-RateLimit-Limit`, `X-RateLimit-Remaining`, `X-RateLimit-Reset`, and `Retry-After` (on 429).
