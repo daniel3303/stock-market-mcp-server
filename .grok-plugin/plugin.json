@@ -1,0 +1,10 @@
+{
+  "name": "equibles",
+  "version": "1.0.0",
+  "description": "Financial research with SEC filings, company financials, institutional holdings, earnings calls, prices, options, and macroeconomic data.",
+  "author": { "name": "Equibles", "url": "https://equibles.com" },
+  "homepage": "https://equibles.com",
+  "repository": "https://github.com/daniel3303/stock-market-mcp-server",
+  "license": "MIT",
+  "keywords": ["equibles", "equibles mcp"]
+}

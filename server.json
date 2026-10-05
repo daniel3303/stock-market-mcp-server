@@ -1,7 +1,7 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.daniel3303/equibles",
-  "description": "111 free tools, Claude & ChatGPT: prices, options, SEC filings, 13F, insider, congress, transcripts, indexes.",
+  "description": "SEC filings, company financials, holdings, earnings calls, stock prices, options and macro data.",
   "version": "1.0.4",
   "repository": {
     "url": "https://github.com/daniel3303/stock-market-mcp-server",
