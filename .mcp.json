@@ -2,7 +2,7 @@
   "mcpServers": {
     "equibles": {
       "type": "http",
-      "url": "https://mcp.equibles.com/mcp"
+      "url": "https://mcp.equibles.com/mcp?auth=oauth"
     }
   }
 }

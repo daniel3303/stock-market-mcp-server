@@ -4,7 +4,7 @@
   "description": "Financial research with SEC filings, company financials, institutional holdings, earnings calls, prices, options, and macroeconomic data.",
   "mcpServers": {
     "equibles": {
-      "httpUrl": "https://mcp.equibles.com/mcp"
+      "httpUrl": "https://mcp.equibles.com/mcp?auth=oauth"
     }
   }
 }
