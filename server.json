@@ -1,8 +1,10 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.daniel3303/equibles",
+  "title": "Equibles",
   "description": "SEC filings, company financials, holdings, earnings calls, stock prices, options and macro data.",
-  "version": "1.0.4",
+  "websiteUrl": "https://equibles.com",
+  "version": "1.0.5",
   "repository": {
     "url": "https://github.com/daniel3303/stock-market-mcp-server",
     "source": "github",
@@ -15,7 +17,7 @@
       "headers": [
         {
           "name": "Authorization",
-          "description": "Bearer API key (eq_...). Required unless your client signs in over OAuth — tool calls without either are rejected. Free tier: 100 requests/day.",
+          "description": "Bearer API key (eq_...). Required unless your client signs in over OAuth; tool calls without either are rejected. Free tier: 100 requests/day.",
           "isRequired": false,
           "isSecret": true,
           "value": "Bearer {api_key}",
