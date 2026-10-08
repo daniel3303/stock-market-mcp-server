@@ -2,10 +2,25 @@
   "name": "equibles",
   "version": "1.0.1",
   "description": "US stock research from SEC filings, financial statements, earnings call transcripts, insider trades and 13F holdings through the hosted Equibles MCP server.",
-  "author": { "name": "Equibles", "url": "https://equibles.com" },
+  "author": {
+    "name": "Equibles",
+    "url": "https://equibles.com"
+  },
   "homepage": "https://equibles.com/docs/mcp/claude-code",
   "repository": "https://github.com/daniel3303/stock-market-mcp-server",
   "license": "MIT",
-  "keywords": ["equibles", "finance", "stocks", "sec-filings", "earnings-calls", "mcp"],
-  "mcpServers": "./.mcp.json"
+  "keywords": [
+    "equibles",
+    "finance",
+    "stocks",
+    "sec-filings",
+    "earnings-calls",
+    "mcp"
+  ],
+  "mcpServers": {
+    "equibles": {
+      "type": "http",
+      "url": "https://mcp.equibles.com/mcp"
+    }
+  }
 }
