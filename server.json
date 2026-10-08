@@ -17,7 +17,7 @@
       "headers": [
         {
           "name": "Authorization",
-          "description": "Bearer API key (eq_...). Required unless your client signs in over OAuth — tool calls without either are rejected. Free tier: 100 requests/day.",
+          "description": "Bearer API key (eq_...). Required unless your client signs in over OAuth; tool calls without either are rejected. Free tier: 100 requests/day.",
           "isRequired": false,
           "isSecret": true,
           "value": "Bearer {api_key}",
