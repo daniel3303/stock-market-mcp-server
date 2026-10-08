@@ -27,7 +27,7 @@ ChatGPT and Claude (web and Desktop) can skip the key entirely and sign in over 
 
 ### Plugin packages
 
-This repository includes an [Agent Plugins](https://agent-plugins.org/specification) package for compatible clients such as Cursor (`plugin.json` and `mcp.json`), a Grok Build package (`.grok-plugin/plugin.json` and `.mcp.json`), a Codex plugin (`.codex-plugin/plugin.json` and `.mcp.json`), and a Gemini CLI extension (`gemini-extension.json`). The `skills/` folder holds one research skill that any package loader which discovers skills picks up, including the Codex plugin and Agent Plugins clients. These files configure the hosted MCP endpoint; they do not contain the server implementation. Marketplace availability is separate from these installable packages.
+This repository includes an [Agent Plugins](https://agent-plugins.org/specification) package for compatible clients such as Cursor (`plugin.json` and `mcp.json`), a Grok Build package (`.grok-plugin/plugin.json` and `.mcp.json`), a Codex plugin (`.codex-plugin/plugin.json` and `.mcp.json`), a Claude Code plugin and marketplace (`.claude-plugin/plugin.json`, `.claude-plugin/marketplace.json` and `.mcp.json`), and a Gemini CLI extension (`gemini-extension.json`). The `skills/` folder holds one research skill that any package loader which discovers skills picks up, including the Codex and Claude Code plugins and Agent Plugins clients. These files configure the hosted MCP endpoint; they do not contain the server implementation. Marketplace availability is separate from these installable packages.
 
 The packages use client-managed OAuth through `https://mcp.equibles.com/mcp?auth=oauth`. The query parameter requests authentication during discovery, so the client prompts for sign-in before attempting a data query. Sign in to your Equibles account when prompted. In Gemini CLI, use `/mcp auth equibles` if needed. If your client does not support OAuth, use the API-key configuration below instead.
 
@@ -74,6 +74,14 @@ claude mcp add --transport http equibles https://mcp.equibles.com/mcp
 ```
 
 Then run `/mcp` and choose **Authenticate** to sign in over OAuth.
+
+Or install the plugin, which adds the same server plus the research skill:
+
+```text
+/plugin install equibles --marketplace daniel3303/stock-market-mcp-server
+```
+
+On Claude Code versions before 2.1.275, run `/plugin marketplace add daniel3303/stock-market-mcp-server` first, then `/plugin install equibles@equibles`.
 
 Key alternative:
 
