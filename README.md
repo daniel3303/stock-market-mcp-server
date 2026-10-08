@@ -27,7 +27,7 @@ ChatGPT and Claude (web and Desktop) can skip the key entirely and sign in over 
 
 ### Plugin packages
 
-This repository includes an [Agent Plugins](https://agent-plugins.org/specification) package for compatible clients such as Cursor (`plugin.json` and `mcp.json`), a Grok Build package (`.grok-plugin/plugin.json` and `.mcp.json`), a Codex plugin (`.codex-plugin/plugin.json`, `.mcp.json` and the `skills/` research skill), and a Gemini CLI extension (`gemini-extension.json`). These files configure the hosted MCP endpoint; they do not contain the server implementation. Marketplace availability is separate from these installable packages.
+This repository includes an [Agent Plugins](https://agent-plugins.org/specification) package for compatible clients such as Cursor (`plugin.json` and `mcp.json`), a Grok Build package (`.grok-plugin/plugin.json` and `.mcp.json`), a Codex plugin (`.codex-plugin/plugin.json` and `.mcp.json`), and a Gemini CLI extension (`gemini-extension.json`). The `skills/` folder holds one research skill that any package loader which discovers skills picks up, including the Codex plugin and Agent Plugins clients. These files configure the hosted MCP endpoint; they do not contain the server implementation. Marketplace availability is separate from these installable packages.
 
 The packages use client-managed OAuth through `https://mcp.equibles.com/mcp?auth=oauth`. The query parameter requests authentication during discovery, so the client prompts for sign-in before attempting a data query. Sign in to your Equibles account when prompted. In Gemini CLI, use `/mcp auth equibles` if needed. If your client does not support OAuth, use the API-key configuration below instead.
 

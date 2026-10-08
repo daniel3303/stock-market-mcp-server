@@ -1,6 +1,6 @@
 {
   "name": "equibles",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "US stock market research through the hosted Equibles MCP server: SEC filings with full-text search, XBRL financial statements, earnings call transcripts, insider and congressional trades, 13F institutional holdings, short interest, prices, options and macroeconomic data.",
   "author": {
     "name": "Equibles",

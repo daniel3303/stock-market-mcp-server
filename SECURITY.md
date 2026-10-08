@@ -10,7 +10,7 @@ This repository holds plugin manifests and one skill. It runs no local code: the
 
 ## Credentials
 
-The plugin ships no credentials. Clients sign in over OAuth. If you use an Equibles API key instead, keep it in your client's secret storage or an environment variable, never in a committed file.
+The plugin ships no credentials. Clients sign in over OAuth. If you use an API key from Equibles instead, keep it in your client's secret storage or an environment variable, never in a committed file.
 
 ## Tools that write
 

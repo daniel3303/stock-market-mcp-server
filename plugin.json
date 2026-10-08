@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "equibles",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Financial research with SEC filings, company financials, institutional holdings, earnings calls, prices, options, and macroeconomic data.",
   "author": { "name": "Equibles", "url": "https://equibles.com" },
   "homepage": "https://equibles.com",
