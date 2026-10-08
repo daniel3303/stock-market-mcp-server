@@ -1,0 +1,17 @@
+{
+  "name": "equibles",
+  "owner": { "name": "Equibles", "url": "https://equibles.com" },
+  "metadata": {
+    "description": "The Equibles plugin for Claude Code: the hosted Equibles MCP server plus a stock research skill."
+  },
+  "plugins": [
+    {
+      "name": "equibles",
+      "source": "./",
+      "description": "US stock research from SEC filings, financial statements, earnings call transcripts, insider trades and 13F holdings through the hosted Equibles MCP server.",
+      "version": "1.0.1",
+      "category": "finance",
+      "homepage": "https://equibles.com/docs/mcp/claude-code"
+    }
+  ]
+}

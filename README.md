@@ -27,9 +27,9 @@ ChatGPT and Claude (web and Desktop) can skip the key entirely and sign in over 
 
 ### Plugin packages
 
-This repository includes an [Agent Plugins](https://agent-plugins.org/specification) package for compatible clients such as Cursor (`plugin.json` and `mcp.json`), a Grok Build package (`.grok-plugin/plugin.json` and `.mcp.json`), a Codex plugin (`.codex-plugin/plugin.json` and `.mcp.json`), and a Gemini CLI extension (`gemini-extension.json`). The `skills/` folder holds one research skill that any package loader which discovers skills picks up, including the Codex plugin and Agent Plugins clients. These files configure the hosted MCP endpoint; they do not contain the server implementation. Marketplace availability is separate from these installable packages.
+This repository includes an [Agent Plugins](https://agent-plugins.org/specification) package for compatible clients such as Cursor (`plugin.json` and `mcp.json`), a Grok Build package (`.grok-plugin/plugin.json` and `.mcp.json`), a Codex plugin and marketplace (`.codex-plugin/plugin.json`, `.agents/plugins/marketplace.json` and `.mcp.json`), a Claude Code plugin and marketplace (`.claude-plugin/plugin.json` and `.claude-plugin/marketplace.json`), and a Gemini CLI extension (`gemini-extension.json`). The `skills/` folder holds one research skill that any package loader which discovers skills picks up, including the Codex and Claude Code plugins and Agent Plugins clients. These files configure the hosted MCP endpoint; they do not contain the server implementation. Marketplace availability is separate from these installable packages.
 
-The packages use client-managed OAuth through `https://mcp.equibles.com/mcp?auth=oauth`. The query parameter requests authentication during discovery, so the client prompts for sign-in before attempting a data query. Sign in to your Equibles account when prompted. In Gemini CLI, use `/mcp auth equibles` if needed. If your client does not support OAuth, use the API-key configuration below instead.
+The packages use client-managed OAuth through `https://mcp.equibles.com/mcp?auth=oauth`, except the Claude Code plugin, which uses `https://mcp.equibles.com/mcp` to match the Claude directory connector. For the other packages, the query parameter requests authentication during discovery, so the client prompts for sign-in before attempting a data query. Sign in to your Equibles account when prompted. In Gemini CLI, use `/mcp auth equibles` if needed. If your client does not support OAuth, use the API-key configuration below instead.
 
 Install the Gemini CLI extension from this repository:
 
@@ -39,7 +39,14 @@ gemini extensions install https://github.com/daniel3303/stock-market-mcp-server
 
 For a local checkout of this package, use `gemini extensions link /absolute/path/to/stock-market-mcp-server`. After reviewing the package, Grok Build users can run `grok plugin install /absolute/path/to/stock-market-mcp-server --trust`, then `grok plugin enable equibles` and start a new session.
 
-The only MCP endpoint configured by these packages is `https://mcp.equibles.com/mcp?auth=oauth`. OAuth discovery and sign-in use `https://equibles.com/`. Queries and explicitly requested portfolio changes are sent to Equibles under the signed-in account. Keep the client's normal tool confirmations enabled: portfolio tools can create, change, or delete your saved holdings, and feedback tools send reports to Equibles. The packages contain no executable scripts, lifecycle hooks, embedded credentials, or telemetry code. Report security problems as described in [SECURITY.md](SECURITY.md). Hosted usage is subject to account entitlements and the [service terms](https://equibles.com/legal/terms).
+Install the Codex plugin from this repository's marketplace:
+
+```bash
+codex plugin marketplace add daniel3303/stock-market-mcp-server
+codex plugin add equibles@equibles
+```
+
+The only MCP endpoints configured by these packages are `https://mcp.equibles.com/mcp?auth=oauth` and, in the Claude Code plugin, `https://mcp.equibles.com/mcp`. OAuth discovery and sign-in use `https://equibles.com/`. Queries and explicitly requested portfolio changes are sent to Equibles under the signed-in account. Keep the client's normal tool confirmations enabled: portfolio tools can create, change, or delete your saved holdings, and feedback tools send reports to Equibles. The packages contain no executable scripts, lifecycle hooks, embedded credentials, or telemetry code. Report security problems as described in [SECURITY.md](SECURITY.md). Hosted usage is subject to account entitlements and the [service terms](https://equibles.com/legal/terms).
 
 ### Cline
 
@@ -74,6 +81,16 @@ claude mcp add --transport http equibles https://mcp.equibles.com/mcp
 ```
 
 Then run `/mcp` and choose **Authenticate** to sign in over OAuth.
+
+Or install the plugin, which adds the same server plus the research skill:
+
+```text
+/plugin install equibles --marketplace daniel3303/stock-market-mcp-server
+```
+
+On Claude Code versions before 2.1.275, run `/plugin marketplace add daniel3303/stock-market-mcp-server` first, then `/plugin install equibles@equibles`.
+
+The plugin uses the same server URL as the Equibles connector in Claude's directory; run `/mcp` and choose **Authenticate** to sign in.
 
 Key alternative:
 
