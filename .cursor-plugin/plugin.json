@@ -1,0 +1,29 @@
+{
+  "name": "equibles",
+  "displayName": "Equibles",
+  "version": "1.0.0",
+  "description": "Stock market research in Cursor: SEC filings, financial statements, earnings call transcripts, institutional holdings, insider and congressional trades, prices, options and macroeconomic data from the hosted Equibles MCP server.",
+  "author": {
+    "name": "EQUIBLES, LDA",
+    "email": "support@equibles.com"
+  },
+  "publisher": "Equibles",
+  "homepage": "https://equibles.com/docs/mcp/cursor",
+  "repository": "https://github.com/daniel3303/stock-market-mcp-server",
+  "license": "MIT",
+  "logo": "assets/equibles-logo-plate-512.png",
+  "keywords": [
+    "equibles",
+    "finance",
+    "stocks",
+    "sec-filings",
+    "earnings-calls",
+    "mcp"
+  ],
+  "mcpServers": {
+    "equibles": {
+      "type": "http",
+      "url": "https://mcp.equibles.com/mcp"
+    }
+  }
+}
